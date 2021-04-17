@@ -1,115 +1,198 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Captions</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+    <!-- Additional CSS Files -->
+    
+    <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
 
-    <title>Hello, world!</title>
-    <style type="text/css"> 
-        html, 
-        body { 
-            height: 300px; 
-        } 
-          
-        .top-left { 
-            top: 0; 
-            left: 0; 
-        } 
-          
-        .top-center { 
-            top: 10%; 
-            left: 50%; 
-            transform: translateX(-50%); 
-        } 
-          
-        .top-right { 
-            top: 0; 
-            right: 0; 
-        } 
-          
-        .mid-left { 
-            top: 70%; 
-            left: 30%; 
-            transform: translateY(-50%); 
-        } 
-          
-        .mid-center { 
-            top: 70%; 
-            left: 50%; 
-            transform: translateX(-50%) translateY(-50%); 
-        } 
-          
-        .mid-right { 
-            top: 70%; 
-            right: 30%; 
-            transform: translateY(-50%); 
-        } 
-          
-        .bottom-left { 
-            bottom: 0; 
-            left: 0; 
-        } 
-          
-        .bottom-center { 
-            bottom: 0; 
-            left: 50%; 
-            transform: translateX(-50%); 
-        } 
-          
-        .bottom-right { 
-            bottom: 0; 
-            right: 0; 
-        } 
-    </style> 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Image Caption Generator</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-            </ul>
-          </div>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fullpage.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/fullpage.min.js' %}"></script>
+
+    <script src="{% static 'js/scrolloverflow.js' %}"></script>
+
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+
+    <script src="{% static 'js/form.js' %}"></script>
+
+    <script src="{% static 'js/custom.js' %}"></script>
+
+
+    </head>
+    
+    <body>
+    
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </nav>
-      <form method="post" enctype="multipart/form-data" action="predictImage">
-  
-        {% csrf_token %}
-        <div class="position-absolute mid-left">
-        <div class="col-md-4 col-sm-4"><label for="fname">Upload Image :</label> </div> <input name="filePath" type="file"><br><br>
-        <br>
-      </div>     
-    <!--    <input type="submit" value="Submit" ></div> -->
-    <div class="position-absolute mid-right">
-    <button type="submit"  value="Submit" class="btn btn-outline-danger btn-lg">submit</button>
-</div>
-    <div class="position-absolute top-center">
-        <img src={{filePathName}} alt='imagename'>
-    </div>
-    <div  class="position-absolute bottom-center">
-      <h2>The predicted label is {{result}}</h2>
-    </div>
-   
-       </form>
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <a href="#" id="logo" title="Elegance by TemplateMo">
+                        image caption generator
+                    </a>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">Model</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">About Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    -->
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <span class="welcome-first animate" data-animate="fadeInUp">Hello, welcome to</span>
+                        <h1 class="welcome-title animate" data-animate="fadeInUp">Image Caption Generator</h1>
+                        <p class="animate" data-animate="fadeInUp">We help u decipher scenes u cannot decipher on ur own(wink). Thank you.</p>
+                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="{% static 'images/mouse-scroll.png' %}" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>Model</span>
+                                                <h2>Predicted label is:</h2>
+                                                <p>{{result}}.</p>
+                                            </div>
+                                            <form method="post" enctype="multipart/form-data" action="predictImage">
+                                                {% csrf_token %}
+                                            <input name="filePath" type="file"><br><br>
+                                            <button type="submit"  value="Submit" class="btn btn-outline-danger btn-lg">submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="{{filePathName}}" class="rounded" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>About Us</span>
+                                                <h2>Who are we?</h2>
+                                                <p>Credits go to <strong>Saumay Sagar Kulshreshtah</strong> and <strong>Vinay Upadhayay</strong> for photos and video used in this template. Vivamus tincidunt, augue rutrum convallis volutpat, massa lacus tempus leo.</p>
+                                            </div>
+                                            <div class="facts-list owl-carousel">
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">4</span> Degrees
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">12</span> Working Years
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">6</span> Team Members
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="" class="rounded" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/saumay.kulshreshtha/" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Bagul-A?tab=repositories" title="Instagram"><i class="fa fa-behance"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+
   </body>
 </html>
